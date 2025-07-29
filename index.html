@@ -1,0 +1,1104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uzum Market</title>
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="container">
+        <div class="max-width">
+            <div class="background">
+                <header class="display">
+                    <h1>Uzum Market</h1>
+                    <button class="Katalog" id="catalog-btn">
+                        <i class='bx bx-category-alt'></i>Katalog
+                    </button>
+                    <div class="search-container">
+                        <input type="text" class="search-input" placeholder="Mahsulotlar va turkumlar izlash">
+                        <button class="search-button">
+                            <i class='bx bx-search search-icon'></i>
+                        </button>
+                    </div>
+                    <ul class="font-size-18 display">
+
+
+
+                        <li class="div-ol-li-1 display">
+                            <i class='bx bx-user'></i>
+                            <span class="open-modal-kirish">Kirish</span>
+                            <!-- Birinchi modal (telefon raqam kiritish) -->
+                            <div class="kirish-modal modal-1">
+                                <input type="text" placeholder="Telefon raqam" class="tel-input">
+                                <button class="kodni-olish Kirish">Kodni olish</button>
+                            </div>
+
+                            <!-- Ikkinchi modal (kod kiritish) -->
+                            <div class="kirish-modal modal-2">
+                                <div class="div-kirish-2">
+                                    <p>Kodni kiriting</p>
+                                    <ul class="code-inputs">
+                                        <li><input type="number" maxlength="1" class="code-input"></li>
+                                        <li><input type="number" maxlength="1" class="code-input"></li>
+                                        <li><input type="number" maxlength="1" class="code-input"></li>
+                                        <li><input type="number" maxlength="1" class="code-input"></li>
+                                        <li><input type="number" maxlength="1" class="code-input"></li>
+                                    </ul>
+                                    <div class="success-message"></div>
+                                </div>
+                            </div>
+                        </li>
+
+
+
+
+
+                        <li class="div-ol-li-2 display" id="favorites-btn">
+                            <i class='bx bx-heart'></i>
+                            <span>Saralangan</span> <span id="favorite-count">(0)</span>
+                        </li>
+                        <li class="div-ol-li-3 display" id="cart-btn">
+                            <i class='bx bx-cart'></i>
+                            <span>Savat</span>
+                        </li>
+                    </ul>
+                    <div class="modal" id="favoritesModal">
+                        <div class="modal-content">
+                            <span class="close-btn" id="closeFavoritesBtn">&times;</span>
+                            <h2>Saralanganlar</h2>
+                            <div id="favorites-list">
+                                <p class="no-favorites">Saralangan mahsulotlar mavjud emas.</p>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+                <nav class="display catalog-dropdown">
+                    <ul class="display">
+                        <li><a href="#">Hafta tovushlari</a></li>
+                        <li><a href="#">Elektronika</a></li>
+                        <li><a href="#">Maishi texnika</a></li>
+                        <li><a href="#">Kiyim</a></li>
+                        <li><a href="#">Poyabzallar</a></li>
+                        <li><a href="#">Aksesuarlar</a></li>
+                        <li><a href="#">Go`zallik va parvarish</a></li>
+                        <li><a href="#">Salomatlik</a></li>
+                        <li><a href="#">Uy-ro`zg`or buyumlari</a></li>
+                        <li><a href="#">Qurilish va Ta'mirlash</a></li>
+                        <li><a href="#">Yana</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </div>
+
+    <div class="max-width">
+
+        <main>
+            <div class="slider-container">
+                <button class="arrow left" onclick="prevImage()">&#8592;</button>
+                <img id="slider-image" src="uzum_frame1.png" alt="Uzum product">
+                <button class="arrow right" onclick="nextImage()">&#8594;</button>
+            </div>
+        </main>
+
+
+
+        <div class="btn-max-1">
+            <button>Onalar va bolalar uchun</button>
+            <button>Arzon narxlar kafolati</button>
+            <button>Zamonaviy bozor</button>
+            <button>Maktab bozori</button>
+        </div>
+
+
+        <div class="product-container display"> <!-- ! birinchi qator -->
+            <div class="product-card"> <!-- ? birrinchi mahsulot -->
+                <div class="product-image">
+                    <img src="assets/img-uzum.png" alt="Mahsulot rasmi">
+                    <div class="heart-icon" data-product-id="1">
+                        <i class='bx bx-heart'></i>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <div class="price-info">
+                        <span class="price">35 990 so'm</span>
+                        <span class="monthly-payment">2 549 so'm/oyiga</span>
+                    </div>
+                    <p class="product-name">Head&Shoulders, qazg'oqqa qarshi shampuni va soch uchun balzam "Asosiy"</p>
+                    <div class="rating-info">
+                        <span class="rating">4.9</span>
+                        <span class="reviews">(5594 sharhlar)</span>
+                    </div>
+                    <div class="add-to-cart-container">
+                        <button class="add-to-cart-btn">Savatga</button>
+                        <div class="quantity-selector hidden x">
+                            <button class="minus-btn">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- ? birrinchi mahsulot -->
+
+            <div class="product-card"> <!-- ? ikkinchi mahsulot -->
+                <div class="product-image">
+                    <img src="assets/Samsung_Galaxy A34.png" alt="Mahsulot rasmi">
+                    <div class="heart-icon" data-product-id="2">
+                        <i class='bx bx-heart'></i>
+                    </div>
+
+                </div>
+                <div class="product-details">
+                    <div class="price-info">
+                        <span class="price">45 990 so'm</span>
+                        <span class="monthly-payment">3 249 so'm/oyiga</span>
+                    </div>
+                    <p class="product-name"> Galaxy A34 5G 8/256GB Awesome Silver</p>
+                    <div class="rating-info">
+                        <span class="rating">4.7</span>
+                        <span class="reviews">(3421 sharhlar)</span>
+                    </div>
+                    <div class="add-to-cart-container">
+                        <button class="add-to-cart-btn">Savatga</button>
+                        <div class="quantity-selector hidden">
+                            <button class="minus-btn">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- ? ikkinchi mahsulot -->
+
+            <div class="product-card"> <!-- ? uchinchi mahsulot -->
+                <div class="product-image">
+                    <img src="assets/muzlatkich.png" alt="Mahsulot rasmi">
+                    <div class="heart-icon" data-product-id="3">
+                        <i class='bx bx-heart'></i>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <div class="price-info">
+                        <span class="price">89 990 so'm</span>
+                        <span class="monthly-payment">6 549 so'm/oyiga</span>
+                    </div>
+                    <p class="product-name">Bosch KGN39VL35R No Frost + VitaFresh 388L</p>
+                    <div class="rating-info">
+                        <span class="rating">4.8</span>
+                        <span class="reviews">(1278 sharhlar)</span>
+                    </div>
+                    <div class="add-to-cart-container">
+                        <button class="add-to-cart-btn">Savatga</button>
+                        <div class="quantity-selector hidden">
+                            <button class="minus-btn">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- ? uchinchi mahsulot -->
+
+
+
+
+
+            <div class="product-card"> <!-- ? to'rtinchi mahsulot -->
+                <div class="product-image">
+                    <img src="assets/cofe.png" alt="Mahsulot rasmi">
+                    <div class="heart-icon" data-product-id="4">
+                        <i class='bx bx-heart'></i>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <div class="price-info">
+                        <span class="price">37 990 so'm</span>
+                        <span class="monthly-payment">2 690 so'm/oyiga</span>
+                    </div>
+                    <p class="product-name">Eriydigan qahva Nescafe Gold Aroma Intesko 85g</p>
+                    <div class="rating-info">
+                        <span class="rating">4.9</span>
+                        <span class="reviews">(1278 sharhlar)</span>
+                    </div>
+                    <div class="add-to-cart-container">
+                        <button class="add-to-cart-btn">Savatga</button>
+                        <div class="quantity-selector hidden">
+                            <button class="minus-btn">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- ? to'rtinchi mahsulot -->
+
+
+
+
+            <div class="product-card"> <!-- ? beshinchi mahsulot -->
+                <div class="product-image">
+                    <img src="assets/sovun.png" alt="Mahsulot rasmi">
+                    <div class="heart-icon" data-product-id="5">
+                        <i class='bx bx-heart'></i>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <div class="price-info">
+                        <span class="price">7 990 so'm</span>
+                        <span class="monthly-payment">565 so'm/oyiga</span>
+                    </div>
+                    <p class="product-name">Xo`shboy sovun Olivia Allee Francain Oxideya, 140g</p>
+                    <div class="rating-info">
+                        <span class="rating">4.9</span>
+                        <span class="reviews">(1278 sharhlar)</span>
+                    </div>
+                    <div class="add-to-cart-container">
+                        <button class="add-to-cart-btn">Savatga</button>
+                        <div class="quantity-selector hidden">
+                            <button class="minus-btn">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- ? beshinchi mahsulot -->
+        </div> <!-- ! birinchi qator -->
+
+
+
+
+        <div class="product-container display"> <!-- ! ikkinchi qator -->
+            <div class="product-card"> <!-- ? oltinchi mahsulot -->
+                <div class="product-image">
+                    <img src="assets/rasm-removebg-preview.png" alt="Mahsulot rasmi">
+                    <div class="heart-icon" data-product-id="6">
+                        <i class='bx bx-heart'></i>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <div class="price-info">
+                        <span class="price">35 990 so'm</span>
+                        <span class="monthly-payment">1 203 so'm/oyiga</span>
+                    </div>
+                    <p class="product-name">Shampun Olivai Men x -Expert big boss moda 1 list</p>
+                    <div class="rating-info">
+                        <span class="rating">4.8</span>
+                        <span class="reviews">(5594 sharhlar)</span>
+                    </div>
+                    <div class="add-to-cart-container">
+                        <button class="add-to-cart-btn">Savatga</button>
+                        <div class="quantity-selector hidden x">
+                            <button class="minus-btn">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- ? oltinchi mahsulot -->
+
+            <div class="product-card"> <!-- ? yettinchi mahsulot -->
+                <div class="product-image">
+                    <img src="assets/Снимок_экрана_2025-07-28_223304-removebg-preview.png" alt="Mahsulot rasmi">
+                    <div class="heart-icon" data-product-id="7">
+                        <i class='bx bx-heart'></i>
+                    </div>
+
+                </div>
+                <div class="product-details">
+                    <div class="price-info">
+                        <span class="price">41 390 so'm</span>
+                        <span class="monthly-payment">3 931 so'm/oyiga</span>
+                    </div>
+                    <p class="product-name">Qahva Jacobs Velvet tabiiy eruvchan kukimi 95 g</p>
+                    <div class="rating-info">
+                        <span class="rating">4.7</span>
+                        <span class="reviews">(3421 sharhlar)</span>
+                    </div>
+                    <div class="add-to-cart-container">
+                        <button class="add-to-cart-btn">Savatga</button>
+                        <div class="quantity-selector hidden">
+                            <button class="minus-btn">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- ? yettinchi mahsulot -->
+
+            <div class="product-card"> <!-- ? sakkizinchi mahsulot -->
+                <div class="product-image">
+                    <img src="assets/uzum_olivia_7-.png" alt="Mahsulot rasmi">
+                    <div class="heart-icon" data-product-id="8">
+                        <i class='bx bx-heart'></i>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <div class="price-info">
+                        <span class="price">10 660 so'm</span>
+                        <span class="monthly-payment">778 so'm/oyiga</span>
+                    </div>
+                    <p class="product-name">Xushboy sovun Olivia Milk N white peach beach 275 g</p>
+                    <div class="rating-info">
+                        <span class="rating">4.7</span>
+                        <span class="reviews">(1278 sharhlar)</span>
+                    </div>
+                    <div class="add-to-cart-container">
+                        <button class="add-to-cart-btn">Savatga</button>
+                        <div class="quantity-selector hidden">
+                            <button class="minus-btn">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- ? sakkizinchi mahsulot -->
+
+
+
+
+
+            <div class="product-card"> <!-- ? to`qizinchi mahsulot -->
+                <div class="product-image">
+                    <img src="assets/uzum_9.png" alt="Mahsulot rasmi">
+                    <div class="heart-icon" data-product-id="9">
+                        <i class='bx bx-heart'></i>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <div class="price-info">
+                        <span class="price">16 990 so'm</span>
+                        <span class="monthly-payment">1 203 so'm/oyiga</span>
+                    </div>
+                    <p class="product-name">Shampun Oliivia Le Bouquet Chatming peony Essence 1 litr</p>
+                    <div class="rating-info">
+                        <span class="rating">4.9</span>
+                        <span class="reviews">(1278 sharhlar)</span>
+                    </div>
+                    <div class="add-to-cart-container">
+                        <button class="add-to-cart-btn">Savatga</button>
+                        <div class="quantity-selector hidden">
+                            <button class="minus-btn">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- ? to'qizinchi mahsulot -->
+
+
+
+
+            <div class="product-card"> <!-- ? o`ninchi mahsulot -->
+                <div class="product-image">
+                    <img src="assets/uzum_10.png" alt="Mahsulot rasmi">
+                    <div class="heart-icon" data-product-id="10">
+                        <i class='bx bx-heart'></i>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <div class="price-info">
+                        <span class="price">20 273 so'm</span>
+                        <span class="monthly-payment">1 480 so'm/oyiga</span>
+                    </div>
+                    <p class="product-name">Nestle sutsiz guruchli bo`tqasi 4 oydan boshlab 200 g</p>
+                    <div class="rating-info">
+                        <span class="rating">4.9</span>
+                        <span class="reviews">(1278 sharhlar)</span>
+                    </div>
+                    <div class="add-to-cart-container">
+                        <button class="add-to-cart-btn">Savatga</button>
+                        <div class="quantity-selector hidden">
+                            <button class="minus-btn">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- ? o`ninchi mahsulot -->
+        </div> <!-- ! ikkinchi qator -->
+
+        <!-- ^ yana 10 ta ko`rish -->
+        <button class="open-modal-10">Yana ko'rsat 10</button>
+        <div class="modal-10">
+            <div class="modal-content-10">
+                <div class="product-container display"> <!-- ! uchinchi  qator -->
+                    <div class="product-card"> <!-- ? o`n bir mahsulot -->
+                        <div class="product-image">
+                            <img src="assets/uzum_modal_1.png" alt="Mahsulot rasmi">
+                            <div class="heart-icon" data-product-id="11">
+                                <i class='bx bx-heart'></i>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <div class="price-info">
+                                <span class="price">18 990 so'm</span>
+                                <span class="monthly-payment">1 5345 so'm/oyiga</span>
+                            </div>
+                            <p class="product-name">Hojatxana qog`o`zi st 2 qatlamli 8 dano</p>
+                            <div class="rating-info">
+                                <span class="rating">4.8</span>
+                                <span class="reviews">(1857 sharhlar)</span>
+                            </div>
+                            <div class="add-to-cart-container">
+                                <button class="add-to-cart-btn">Savatga</button>
+                                <div class="quantity-selector hidden x">
+                                    <button class="minus-btn">-</button>
+                                    <span class="quantity-value">1</span>
+                                    <button class="plus-btn">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- ? o`n bir mahsulot -->
+
+                    <div class="product-card"> <!-- ? o`n ikki mahsulot -->
+                        <div class="product-image">
+                            <img src="assets/modal 2.png" alt="Mahsulot rasmi">
+                            <div class="heart-icon" data-product-id="12">
+                                <i class='bx bx-heart'></i>
+                            </div>
+
+                        </div>
+                        <div class="product-details">
+                            <div class="price-info">
+                                <span class="price">29 990 so'm</span>
+                                <span class="monthly-payment">2 124 so'm/oyiga</span>
+                            </div>
+                            <p class="product-name"> Nescafe gold tabiiy eivdigan sublimatsiyalangan qahva tabiiy
+                                qovurilgan</p>
+                            <div class="rating-info">
+                                <span class="rating">5.0</span>
+                                <span class="reviews">(1415 sharhlar)</span>
+                            </div>
+                            <div class="add-to-cart-container">
+                                <button class="add-to-cart-btn">Savatga</button>
+                                <div class="quantity-selector hidden">
+                                    <button class="minus-btn">-</button>
+                                    <span class="quantity-value">1</span>
+                                    <button class="plus-btn">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- ? o`n ikki mahsulot -->
+
+                    <div class="product-card"> <!-- ? o`n uch mahsulot -->
+                        <div class="product-image">
+                            <img src="assets/muzlatkich.png" alt="Mahsulot rasmi">
+                            <div class="heart-icon" data-product-id="13">
+                                <i class='bx bx-heart'></i>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <div class="price-info">
+                                <span class="price">89 990 so'm</span>
+                                <span class="monthly-payment">6 549 so'm/oyiga</span>
+                            </div>
+                            <p class="product-name">Bosch KGN39VL35R No Frost + VitaFresh 388L</p>
+                            <div class="rating-info">
+                                <span class="rating">4.8</span>
+                                <span class="reviews">(1278 sharhlar)</span>
+                            </div>
+                            <div class="add-to-cart-container">
+                                <button class="add-to-cart-btn">Savatga</button>
+                                <div class="quantity-selector hidden">
+                                    <button class="minus-btn">-</button>
+                                    <span class="quantity-value">1</span>
+                                    <button class="plus-btn">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- ? o`n uch mahsulot -->
+
+
+
+
+
+                    <div class="product-card"> <!-- ? o`n to'rt  mahsulot -->
+                        <div class="product-image">
+                            <img src="assets/cofe.png" alt="Mahsulot rasmi">
+                            <div class="heart-icon" data-product-id="14">
+                                <i class='bx bx-heart'></i>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <div class="price-info">
+                                <span class="price">37 990 so'm</span>
+                                <span class="monthly-payment">2 690 so'm/oyiga</span>
+                            </div>
+                            <p class="product-name">Eriydigan qahva Nescafe Gold Aroma Intesko 85g</p>
+                            <div class="rating-info">
+                                <span class="rating">4.9</span>
+                                <span class="reviews">(1278 sharhlar)</span>
+                            </div>
+                            <div class="add-to-cart-container">
+                                <button class="add-to-cart-btn">Savatga</button>
+                                <div class="quantity-selector hidden">
+                                    <button class="minus-btn">-</button>
+                                    <span class="quantity-value">1</span>
+                                    <button class="plus-btn">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- ? o`n to'rt mahsulot -->
+
+
+
+
+                    <div class="product-card"> <!-- ? o`n beshish mahsulot -->
+                        <div class="product-image">
+                            <img src="assets/sovun.png" alt="Mahsulot rasmi">
+                            <div class="heart-icon" data-product-id="15">
+                                <i class='bx bx-heart'></i>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <div class="price-info">
+                                <span class="price">7 990 so'm</span>
+                                <span class="monthly-payment">565 so'm/oyiga</span>
+                            </div>
+                            <p class="product-name">Xo`shboy sovun Olivia Allee Francain Oxideya, 140g</p>
+                            <div class="rating-info">
+                                <span class="rating">4.9</span>
+                                <span class="reviews">(1278 sharhlar)</span>
+                            </div>
+                            <div class="add-to-cart-container">
+                                <button class="add-to-cart-btn">Savatga</button>
+                                <div class="quantity-selector hidden">
+                                    <button class="minus-btn">-</button>
+                                    <span class="quantity-value">1</span>
+                                    <button class="plus-btn">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- ? o`n beshish mahsulot -->
+                </div> <!-- ! uchinchi qator -->
+
+
+
+
+                <div class="product-container display"> <!-- ! To`rtinchi qator -->
+                    <div class="product-card"> <!-- ? o`n olti mahsulot -->
+                        <div class="product-image">
+                            <img src="assets/img-uzum.png" alt="Mahsulot rasmi">
+                            <div class="heart-icon" data-product-id="16">
+                                <i class='bx bx-heart'></i>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <div class="price-info">
+                                <span class="price">35 990 so'm</span>
+                                <span class="monthly-payment">2 549 so'm/oyiga</span>
+                            </div>
+                            <p class="product-name">Head&Shoulders, qazg'oqqa qarshi shampuni va soch uchun balzam
+                                "Asosiy"</p>
+                            <div class="rating-info">
+                                <span class="rating">4.9</span>
+                                <span class="reviews">(5594 sharhlar)</span>
+                            </div>
+                            <div class="add-to-cart-container">
+                                <button class="add-to-cart-btn">Savatga</button>
+                                <div class="quantity-selector hidden x">
+                                    <button class="minus-btn">-</button>
+                                    <span class="quantity-value">1</span>
+                                    <button class="plus-btn">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- ? o`n olti mahsulot -->
+
+                    <div class="product-card"> <!-- ? o`n yetti mahsulot -->
+                        <div class="product-image">
+                            <img src="assets/Samsung_Galaxy A34.png" alt="Mahsulot rasmi">
+                            <div class="heart-icon" data-product-id="17">
+                                <i class='bx bx-heart'></i>
+                            </div>
+
+                        </div>
+                        <div class="product-details">
+                            <div class="price-info">
+                                <span class="price">45 990 so'm</span>
+                                <span class="monthly-payment">3 249 so'm/oyiga</span>
+                            </div>
+                            <p class="product-name"> Galaxy A34 5G 8/256GB Awesome Silver</p>
+                            <div class="rating-info">
+                                <span class="rating">4.7</span>
+                                <span class="reviews">(3421 sharhlar)</span>
+                            </div>
+                            <div class="add-to-cart-container">
+                                <button class="add-to-cart-btn">Savatga</button>
+                                <div class="quantity-selector hidden">
+                                    <button class="minus-btn">-</button>
+                                    <span class="quantity-value">1</span>
+                                    <button class="plus-btn">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- ? o`n yetti mahsulot -->
+
+                    <div class="product-card"> <!-- ? o`n sakkiz mahsulot -->
+                        <div class="product-image">
+                            <img src="assets/muzlatkich.png" alt="Mahsulot rasmi">
+                            <div class="heart-icon" data-product-id="18">
+                                <i class='bx bx-heart'></i>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <div class="price-info">
+                                <span class="price">89 990 so'm</span>
+                                <span class="monthly-payment">6 549 so'm/oyiga</span>
+                            </div>
+                            <p class="product-name">Bosch KGN39VL35R No Frost + VitaFresh 388L</p>
+                            <div class="rating-info">
+                                <span class="rating">4.8</span>
+                                <span class="reviews">(1278 sharhlar)</span>
+                            </div>
+                            <div class="add-to-cart-container">
+                                <button class="add-to-cart-btn">Savatga</button>
+                                <div class="quantity-selector hidden">
+                                    <button class="minus-btn">-</button>
+                                    <span class="quantity-value">1</span>
+                                    <button class="plus-btn">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- ? o`n sakkiz mahsulot -->
+
+
+
+
+
+                    <div class="product-card"> <!-- ? o`n to`qqiz mahsulot -->
+                        <div class="product-image">
+                            <img src="assets/cofe.png" alt="Mahsulot rasmi">
+                            <div class="heart-icon" data-product-id="19">
+                                <i class='bx bx-heart'></i>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <div class="price-info">
+                                <span class="price">37 990 so'm</span>
+                                <span class="monthly-payment">2 690 so'm/oyiga</span>
+                            </div>
+                            <p class="product-name">Eriydigan qahva Nescafe Gold Aroma Intesko 85g</p>
+                            <div class="rating-info">
+                                <span class="rating">4.9</span>
+                                <span class="reviews">(1278 sharhlar)</span>
+                            </div>
+                            <div class="add-to-cart-container">
+                                <button class="add-to-cart-btn">Savatga</button>
+                                <div class="quantity-selector hidden">
+                                    <button class="minus-btn">-</button>
+                                    <span class="quantity-value">1</span>
+                                    <button class="plus-btn">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- ? o`n to`qqiz mahsulot -->
+
+
+
+
+                    <div class="product-card"> <!-- ?  yigirmachi mahsulot -->
+                        <div class="product-image">
+                            <img src="assets/sovun.png" alt="Mahsulot rasmi">
+                            <div class="heart-icon" data-product-id="20">
+                                <i class='bx bx-heart'></i>
+                            </div>
+                        </div>
+                        <div class="product-details">
+                            <div class="price-info">
+                                <span class="price">7 990 so'm</span>
+                                <span class="monthly-payment">565 so'm/oyiga</span>
+                            </div>
+                            <p class="product-name">Xo`shboy sovun Olivia Allee Francain Oxideya, 140g</p>
+                            <div class="rating-info">
+                                <span class="rating">4.9</span>
+                                <span class="reviews">(1278 sharhlar)</span>
+                            </div>
+                            <div class="add-to-cart-container">
+                                <button class="add-to-cart-btn">Savatga</button>
+                                <div class="quantity-selector hidden">
+                                    <button class="minus-btn">-</button>
+                                    <span class="quantity-value">1</span>
+                                    <button class="plus-btn">+</button>
+                                </div>
+                            </div>
+                        </div>
+                    </div> <!-- ? yigirmachi mahsulot -->
+                </div> <!-- ! To`rtinchi qator -->
+            </div>
+        </div>
+        <!-- ^ yana 10 ta ko`rish -->
+        <br><br>
+
+
+        <main>
+            <img src="assets/kanisaner.png" alt="">
+        </main>
+
+
+
+
+        <div class="product-container display"> <!-- ! Beshinchi qator -->
+            <div class="product-card"> <!-- ? yigirma birrinchi mahsulot -->
+                <div class="product-image">
+                    <img src="assets/img-uzum.png" alt="Mahsulot rasmi">
+                    <div class="heart-icon" data-product-id="21">
+                        <i class='bx bx-heart'></i>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <div class="price-info">
+                        <span class="price">35 990 so'm</span>
+                        <span class="monthly-payment">2 549 so'm/oyiga</span>
+                    </div>
+                    <p class="product-name">Head&Shoulders, qazg'oqqa qarshi shampuni va soch uchun balzam
+                        "Asosiy"</p>
+                    <div class="rating-info">
+                        <span class="rating">4.9</span>
+                        <span class="reviews">(5594 sharhlar)</span>
+                    </div>
+                    <div class="add-to-cart-container">
+                        <button class="add-to-cart-btn">Savatga</button>
+                        <div class="quantity-selector hidden x">
+                            <button class="minus-btn">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- ? yigirma birrinchi mahsulot -->
+
+            <div class="product-card"> <!-- ? yigirma ikkinchi mahsulot -->
+                <div class="product-image">
+                    <img src="assets/Samsung_Galaxy A34.png" alt="Mahsulot rasmi">
+                    <div class="heart-icon" data-product-id="22">
+                        <i class='bx bx-heart'></i>
+                    </div>
+
+                </div>
+                <div class="product-details">
+                    <div class="price-info">
+                        <span class="price">45 990 so'm</span>
+                        <span class="monthly-payment">3 249 so'm/oyiga</span>
+                    </div>
+                    <p class="product-name"> Galaxy A34 5G 8/256GB Awesome Silver</p>
+                    <div class="rating-info">
+                        <span class="rating">4.7</span>
+                        <span class="reviews">(3421 sharhlar)</span>
+                    </div>
+                    <div class="add-to-cart-container">
+                        <button class="add-to-cart-btn">Savatga</button>
+                        <div class="quantity-selector hidden">
+                            <button class="minus-btn">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- ? yigirma ikkinchi mahsulot -->
+
+            <div class="product-card"> <!-- ? yigirma uchinchi mahsulot -->
+                <div class="product-image">
+                    <img src="assets/muzlatkich.png" alt="Mahsulot rasmi">
+                    <div class="heart-icon" data-product-id="23">
+                        <i class='bx bx-heart'></i>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <div class="price-info">
+                        <span class="price">89 990 so'm</span>
+                        <span class="monthly-payment">6 549 so'm/oyiga</span>
+                    </div>
+                    <p class="product-name">Bosch KGN39VL35R No Frost + VitaFresh 388L</p>
+                    <div class="rating-info">
+                        <span class="rating">4.8</span>
+                        <span class="reviews">(1278 sharhlar)</span>
+                    </div>
+                    <div class="add-to-cart-container">
+                        <button class="add-to-cart-btn">Savatga</button>
+                        <div class="quantity-selector hidden">
+                            <button class="minus-btn">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- ? yigirma uchinchi mahsulot -->
+
+
+
+
+
+            <div class="product-card"> <!-- ? yigirma  to'rtinchi mahsulot -->
+                <div class="product-image">
+                    <img src="assets/cofe.png" alt="Mahsulot rasmi">
+                    <div class="heart-icon" data-product-id="24">
+                        <i class='bx bx-heart'></i>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <div class="price-info">
+                        <span class="price">37 990 so'm</span>
+                        <span class="monthly-payment">2 690 so'm/oyiga</span>
+                    </div>
+                    <p class="product-name">Eriydigan qahva Nescafe Gold Aroma Intesko 85g</p>
+                    <div class="rating-info">
+                        <span class="rating">4.9</span>
+                        <span class="reviews">(1278 sharhlar)</span>
+                    </div>
+                    <div class="add-to-cart-container">
+                        <button class="add-to-cart-btn">Savatga</button>
+                        <div class="quantity-selector hidden">
+                            <button class="minus-btn">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- ? yigirma to'rtinchi mahsulot -->
+
+
+
+
+            <div class="product-card"> <!-- ? yigirma beshinchi mahsulot -->
+                <div class="product-image">
+                    <img src="assets/sovun.png" alt="Mahsulot rasmi">
+                    <div class="heart-icon" data-product-id="25">
+                        <i class='bx bx-heart'></i>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <div class="price-info">
+                        <span class="price">7 990 so'm</span>
+                        <span class="monthly-payment">565 so'm/oyiga</span>
+                    </div>
+                    <p class="product-name">Xo`shboy sovun Olivia Allee Francain Oxideya, 140g</p>
+                    <div class="rating-info">
+                        <span class="rating">4.9</span>
+                        <span class="reviews">(1278 sharhlar)</span>
+                    </div>
+                    <div class="add-to-cart-container">
+                        <button class="add-to-cart-btn">Savatga</button>
+                        <div class="quantity-selector hidden">
+                            <button class="minus-btn">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- ? yigirma beshinchi mahsulot -->
+        </div> <!-- ! Beshinchi qator -->
+
+
+
+
+        <div class="product-container display"> <!-- ! oltinchi qator -->
+            <div class="product-card"> <!-- ? yigirma oltinchi mahsulot -->
+                <div class="product-image">
+                    <img src="assets/img-uzum.png" alt="Mahsulot rasmi">
+                    <div class="heart-icon" data-product-id="26">
+                        <i class='bx bx-heart'></i>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <div class="price-info">
+                        <span class="price">35 990 so'm</span>
+                        <span class="monthly-payment">2 549 so'm/oyiga</span>
+                    </div>
+                    <p class="product-name">Head&Shoulders, qazg'oqqa qarshi shampuni va soch uchun balzam
+                        "Asosiy"</p>
+                    <div class="rating-info">
+                        <span class="rating">4.9</span>
+                        <span class="reviews">(5594 sharhlar)</span>
+                    </div>
+                    <div class="add-to-cart-container">
+                        <button class="add-to-cart-btn">Savatga</button>
+                        <div class="quantity-selector hidden x">
+                            <button class="minus-btn">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- ? yigirma oltinchi mahsulot -->
+
+            <div class="product-card"> <!-- ? yigirma yettinchi mahsulot -->
+                <div class="product-image">
+                    <img src="assets/Samsung_Galaxy A34.png" alt="Mahsulot rasmi">
+                    <div class="heart-icon" data-product-id="27">
+                        <i class='bx bx-heart'></i>
+                    </div>
+
+                </div>
+                <div class="product-details">
+                    <div class="price-info">
+                        <span class="price">45 990 so'm</span>
+                        <span class="monthly-payment">3 249 so'm/oyiga</span>
+                    </div>
+                    <p class="product-name"> Galaxy A34 5G 8/256GB Awesome Silver</p>
+                    <div class="rating-info">
+                        <span class="rating">4.7</span>
+                        <span class="reviews">(3421 sharhlar)</span>
+                    </div>
+                    <div class="add-to-cart-container">
+                        <button class="add-to-cart-btn">Savatga</button>
+                        <div class="quantity-selector hidden">
+                            <button class="minus-btn">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- ? yigirma yettinchi mahsulot -->
+
+            <div class="product-card"> <!-- ? yigirma sakkizinchi mahsulot -->
+                <div class="product-image">
+                    <img src="assets/muzlatkich.png" alt="Mahsulot rasmi">
+                    <div class="heart-icon" data-product-id="28">
+                        <i class='bx bx-heart'></i>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <div class="price-info">
+                        <span class="price">89 990 so'm</span>
+                        <span class="monthly-payment">6 549 so'm/oyiga</span>
+                    </div>
+                    <p class="product-name">Bosch KGN39VL35R No Frost + VitaFresh 388L</p>
+                    <div class="rating-info">
+                        <span class="rating">4.8</span>
+                        <span class="reviews">(1278 sharhlar)</span>
+                    </div>
+                    <div class="add-to-cart-container">
+                        <button class="add-to-cart-btn">Savatga</button>
+                        <div class="quantity-selector hidden">
+                            <button class="minus-btn">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- ? yigirma sakkizinchi mahsulot -->
+
+
+
+
+
+            <div class="product-card"> <!-- ? yigirma to`qizinchi mahsulot -->
+                <div class="product-image">
+                    <img src="assets/cofe.png" alt="Mahsulot rasmi">
+                    <div class="heart-icon" data-product-id="29">
+                        <i class='bx bx-heart'></i>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <div class="price-info">
+                        <span class="price">37 990 so'm</span>
+                        <span class="monthly-payment">2 690 so'm/oyiga</span>
+                    </div>
+                    <p class="product-name">Eriydigan qahva Nescafe Gold Aroma Intesko 85g</p>
+                    <div class="rating-info">
+                        <span class="rating">4.9</span>
+                        <span class="reviews">(1278 sharhlar)</span>
+                    </div>
+                    <div class="add-to-cart-container">
+                        <button class="add-to-cart-btn">Savatga</button>
+                        <div class="quantity-selector hidden">
+                            <button class="minus-btn">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- ? yigirma to'qizinchi mahsulot -->
+
+
+
+
+            <div class="product-card"> <!-- ? o`tizinchi mahsulot -->
+                <div class="product-image">
+                    <img src="assets/sovun.png" alt="Mahsulot rasmi">
+                    <div class="heart-icon" data-product-id="30">
+                        <i class='bx bx-heart'></i>
+                    </div>
+                </div>
+                <div class="product-details">
+                    <div class="price-info">
+                        <span class="price">7 990 so'm</span>
+                        <span class="monthly-payment">565 so'm/oyiga</span>
+                    </div>
+                    <p class="product-name">Xo`shboy sovun Olivia Allee Francain Oxideya, 140g</p>
+                    <div class="rating-info">
+                        <span class="rating">4.9</span>
+                        <span class="reviews">(1278 sharhlar)</span>
+                    </div>
+                    <div class="add-to-cart-container">
+                        <button class="add-to-cart-btn">Savatga</button>
+                        <div class="quantity-selector hidden">
+                            <button class="minus-btn">-</button>
+                            <span class="quantity-value">1</span>
+                            <button class="plus-btn">+</button>
+                        </div>
+                    </div>
+                </div>
+            </div> <!-- ? o`tizinchi mahsulot -->
+        </div> <!-- ! oltinchi qator -->
+
+
+
+
+
+
+        <footer class="display">
+            <div class="footer-1">
+                <h1>Biz haqimizda</h1>
+                <p>Topshirish puktlari</p>
+                <p>Vakansiyalar</p>
+            </div>
+            <div class="footer-2">
+                <h1>Foydalanuvchilarga</h1>
+                <p>Biz bilan bog`lanish</p>
+                <p>Savol-javob</p>
+            </div>
+            <div class="footer-3">
+                <h1>Tatbirkorlarga</h1>
+                <p>Uzumda soting</p>
+                <p>Sotuvchi kabinetiga kirish</p>
+                <p>Topshirish punktini ochisj</p>
+            </div>
+            <div class="footer-4">
+                <h1>Ilovalar yuklab olish</h1>
+                <div class="div-appalo">
+                    <i class='font-size-30 bx bxl-apple'></i>
+                    <p class="font-size-18">AppStore</p>
+                </div>
+                <div class="div-goolge">
+                    <i class='font-size-30 bx bxl-play-store'></i> <!-- Corrected class name for Google Play icon -->
+                    <p class="font-size-18">Google Play</p>
+                </div>
+                <br>
+                <br>
+                <h1>Uzum ijtimoiy tarmoqlarda</h1>
+                <div class="footer-boxicons ">
+                    <a href="https://www.instagram.com/" target="_blank"><i
+                            class='font-size-35 bx bxl-instagram'></i></a>
+                    <a href="https://web.telegram.org/k/" target="_blank"><i
+                            class='font-size-35 bx bxl-telegram'></i></a>
+                    <a href="https://www.facebook.com/login/"><i class='font-size-35 bx bxl-facebook'></i></a>
+                    <a href="https://www.youtube.com/"><i class='font-size-35 bx bxl-youtube'></i></a>
+
+                </div>
+            </div>
+        </footer>
+
+
+
+
+
+    </div>
+
+    
+    <script src="script.js"></script>
+</body>
+
+</html>

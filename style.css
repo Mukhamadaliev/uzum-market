@@ -1,0 +1,886 @@
+/* ? kutubxona */
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+:root {
+    --blue: #2563eb;
+    --black: #000;
+    --white: white;
+    --minus-whihe: rgba(255, 255, 255, 0.7);
+    --gray: gray;
+    --primary: #7000FF;
+    --primary-hover: #5a00cc;
+}
+
+.font-size-18 {
+    font-size: 18px;
+}
+
+.font-size-20 {
+    font-size: 20px;
+}
+
+.font-size-30 {
+    font-size: 30px;
+}
+
+.font-size-35 {
+    font-size: 35px;
+}
+
+.font-size-40 {
+    font-size: 40px;
+}
+
+.font-size-50 {
+    font-size: 50px;
+}
+
+.max-width {
+    max-width: 1300px;
+    margin: auto;
+    padding: 0 20px;
+}
+
+.background {
+    background: white;
+}
+
+button,
+input,
+i,
+li {
+    cursor: pointer;
+}
+
+.display {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.flex {
+    flex-wrap: wrap;
+}
+
+/* ? kutubxona */
+
+/* Header styles */
+header {
+    padding: 15px 0;
+    border-bottom: 1px solid #eee;
+}
+
+header h1 {
+    color: var(--primary);
+    font-size: 28px;
+}
+
+header ul {
+    list-style: none;
+    gap: 30px;
+}
+
+nav ul {
+    list-style: none;
+    gap: 23px;
+    transition: all 0.3s ease;
+}
+
+nav ul a {
+    text-decoration: none;
+    color: var(--gray);
+    font-size: 14px;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: rgba(128, 128, 128, 0.868);
+}
+
+.Katalog {
+    padding: 10px 20px;
+    color: var(--primary);
+    gap: 10px;
+    border: 1px solid var(--primary);
+    background-color: transparent;
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    font-weight: 600;
+}
+
+.Katalog:hover {
+    background-color: var(--primary);
+    color: white;
+}
+
+/* Search input container styling */
+.search-container {
+    width: 500px;
+    display: flex;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+/* Search input field styling */
+.search-input {
+    border: none;
+    outline: none;
+    flex-grow: 1;
+    padding: 12px 20px;
+    font-size: 16px;
+    width: 100%;
+}
+
+/* Search button styling */
+.search-button {
+    border: none;
+    background-color: #f0f0f0;
+    padding: 12px 20px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.search-button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Search icon styling */
+.search-icon {
+    font-size: 20px;
+    color: #555;
+}
+
+/* Main content styles */
+main img {
+    padding-top: 20px;
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.btn-max-1 {
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    margin: 30px 0;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.btn-max-1 button {
+    flex: 1;
+    min-width: 180px;
+    padding: 15px 20px;
+    color: black;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    background-color: #f0f0f0;
+    transition: background-color 0.3s ease;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.btn-max-1 button:hover {
+    background-color: #e0e0e0;
+}
+
+/* Product container styles */
+.product-container {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-start;
+    margin: 30px 0;
+}
+
+.product-card {
+    width: calc(33.333% - 14px);
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    overflow: hidden;
+    background-color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.product-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+.product-image {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.product-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.heart-icon {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #fff;
+    border-radius: 50%;
+    padding: 8px;
+    cursor: pointer;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    z-index: 2;
+}
+
+.heart-icon i {
+    font-size: 20px;
+    color: #555;
+}
+
+.heart-icon.liked i {
+    color: red;
+}
+
+.product-details {
+    padding: 15px;
+}
+
+.price-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.price {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--black);
+    margin-right: 10px;
+}
+
+.monthly-payment {
+    font-size: 13px;
+    color: #008000;
+    font-weight: 500;
+}
+
+.product-name {
+    font-size: 15px;
+    color: #333;
+    margin-bottom: 10px;
+    line-height: 1.4;
+    height: 42px;
+    overflow: hidden;
+    display: -webkit-box;
+    --webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+}
+
+.rating-info {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.rating {
+    font-size: 14px;
+    color: #ffc107;
+    margin-right: 5px;
+    font-weight: bold;
+}
+
+.reviews {
+    font-size: 12px;
+    color: #666;
+}
+
+.add-to-cart-container {
+    height: 40px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+.add-to-cart-btn {
+    width: 100%;
+    padding: 10px;
+    background-color: var(--primary);
+    color: #fff;
+    border: none;
+    border-radius: 8px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.add-to-cart-btn:hover {
+    background-color: var(--primary-hover);
+}
+
+/* Miqdor tanlash selectori */
+.quantity-selector {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #f0f0f0;
+    padding: 5px;
+    border-radius: 8px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease;
+}
+
+.quantity-selector button {
+    background: none;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #333;
+    width: 30px;
+    text-align: center;
+}
+
+.quantity-value {
+    font-size: 16px;
+    font-weight: bold;
+}
+
+/* Modal oynasi */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 100;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: white;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal.show {
+    display: flex;
+}
+
+.modal-content {
+    background-color: #fefefe;
+    padding: 25px;
+    /* width: 400px; */
+    /* max-width: 90%; */
+    border-radius: 12px;
+    text-align: center;
+    position: relative;
+}
+
+.close-btn {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    transition: color 0.3s;
+}
+
+.close-btn:hover {
+    color: #555;
+}
+
+h2 {
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.no-favorites {
+    color: #666;
+    font-style: italic;
+}
+
+.favorite-item {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    justify-content: space-between;
+}
+
+.favorite-item img {
+    width: 50px;
+    height: 50px;
+    object-fit: cover;
+    border-radius: 4px;
+    margin-right: 15px;
+}
+
+.favorite-item-info {
+    flex: 1;
+    text-align: left;
+}
+
+.favorite-item-name {
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+
+.favorite-item-price {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--primary);
+}
+
+.remove-favorite {
+    color: #ff4444;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+/* Ko'rinish klasslari */
+.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.visible {
+    opacity: 1;
+    pointer-events: auto;
+}
+
+.open-modal-10 {
+    width: 50%;
+    padding: 10px;
+    background-color: #f0f0f0;
+    transform: translateX(320px);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.open-modal-10:hover {
+    background-color: #e0e0e0;
+}
+
+.modal-10 {
+    display: none;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
+
+.modal-content-10 {
+    padding: 20px;
+    text-align: center;
+}
+
+
+* Footer section styling */ footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px 0;
+    border-top: 1px solid #ddd;
+    margin-top: 40px;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+footer>div {
+    flex: 1 1 auto;
+    min-width: 180px;
+}
+
+footer h1 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #333;
+}
+
+footer p {
+    margin-bottom: 8px;
+    color: #555;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+footer p:hover {
+    color: blueviolet;
+}
+
+.div-appalo,
+.div-goolge {
+    margin-bottom: 10px;
+    gap: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    cursor: pointer;
+    transition: opacity 0.3s ease;
+}
+
+.div-appalo:hover,
+.div-goolge:hover {
+    opacity: 0.8;
+}
+
+.div-goolge p {
+    margin: 0;
+}
+
+.footer-boxicons {
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.footer-boxicons i {
+    cursor: pointer;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.footer-boxicons i:hover {
+    color: blueviolet;
+    transform: translateY(-3px);
+}
+
+
+
+
+/* ^ Modal umumiy stillari */
+.kirish-modal {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    width: 280px;
+    z-index: 100;
+    animation: modalFadeIn 0.3s ease-out;
+    box-sizing: border-box;
+}
+
+/* ? Modal 1 (telefon raqam) */
+.modal-1.show {
+    display: block;
+}
+
+/* ? Modal 2 (kod kiritish) */
+.modal-2.show {
+    display: block;
+}
+
+/* Animatsiya */
+@keyframes modalFadeIn {
+    from {
+        opacity: 0;
+        transform: translate(-50%, -60%);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(-50%, -50%);
+    }
+}
+
+.div-ol-li-1 {
+
+    position: relative;
+    list-style: none;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 8px 12px;
+    border-radius: 4px;
+}
+
+.div-ol-li-1:hover {
+    background-color: #f0f0f0;
+}
+
+.bx-user {
+    font-size: 20px;
+}
+
+.tel-input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.tel-input.prefix-added {
+    padding-left: 40px;
+}
+
+.kodni-olish {
+    width: 100%;
+    padding: 10px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: background-color 0.3s;
+}
+
+.kodni-olish:hover {
+    background-color: #45a049;
+}
+
+.div-kirish-2 {
+    margin-top: 15px;
+}
+
+.code-inputs {
+    display: flex;
+    gap: 8px;
+    padding: 0;
+    list-style: none;
+}
+
+.code-inputs li {
+    flex: 1;
+}
+
+.code-input {
+    width: 100%;
+    height: 40px;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    font-size: 16px;
+}
+
+.code-input:focus {
+    outline: 2px solid #4CAF50;
+    border-color: transparent;
+}
+
+.success-message {
+    color: #4CAF50;
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: center;
+    display: none;
+}
+
+.success-message.show {
+    display: block;
+}
+
+
+
+
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    padding: 20px;
+}
+
+.slider-container {
+    width: 1300px;
+    height: auto;
+    margin: auto;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#slider-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: #ffffffcc;
+    border: none;
+    font-size: 24px;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 10;
+    border-radius: 50%;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+}
+
+.arrow.left {
+    left: -3px;
+}
+
+.arrow.right {
+    right: -3px;
+}
+
+@media (max-width: 1024px) {
+    .product-card {
+        width: calc(50% - 10px);
+    }
+
+    .search-container {
+        width: 350px;
+    }
+
+    .slider-container {
+        width: 95%;
+    }
+
+    nav ul {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+}
+
+@media (max-width: 768px) {
+    header {
+        flex-wrap: wrap;
+        gap: 15px;
+    }
+
+    .Katalog,
+    .search-container {
+        width: 100%;
+    }
+
+    .product-card {
+        width: calc(50% - 10px);
+    }
+
+    header ul {
+        width: 100%;
+        justify-content: space-between;
+    }
+
+    .btn-max-1 button {
+        min-width: calc(50% - 10px);
+    }
+
+    .slider-container {
+        width: 100%;
+    }
+
+    .arrow.left {
+        left: 10px;
+    }
+
+    .arrow.right {
+        right: 10px;
+    }
+
+    footer>div {
+        min-width: 45%;
+        flex-wrap: wrap;
+    }
+
+    footer {
+        flex-wrap: wrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-max-1 button {
+        min-width: 100%;
+    }
+
+    .modal-content {
+        width: 90%;
+        padding: 15px;
+    }
+
+    .product-card {
+        width: 100%;
+    }
+
+    .product-container {
+        flex-direction: column;
+    }
+
+    .div-ol-li-1 span,
+    .div-ol-li-2 span,
+    .div-ol-li-3 span {
+        display: none;
+    }
+
+    .font-size-18 {
+        font-size: 16px;
+    }
+
+    header h1 {
+        font-size: 24px;
+    }
+
+    footer>div {
+        min-width: 50%;
+        flex-wrap: wrap;
+    }
+
+    .open-modal-10 {
+        width: 100%;
+        transform: none;
+    }
+
+    footer {
+        flex-wrap: wrap;
+    }
+}
+
+
+@media (max-width: 320px) {
+    .code-inputs {
+        gap: 5px;
+    }
+
+    .code-input {
+        height: 35px;
+        font-size: 14px;
+    }
+
+    .kirish-modal {
+        width: 95%;
+    }
+
+    .modal-content {
+        padding: 10px;
+    }
+
+    footer {
+        flex-wrap: wrap;
+    }
+}
