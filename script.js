@@ -17,6 +17,123 @@ const codeInputs = document.querySelectorAll('.code-input');
 const telInput = document.querySelector('.tel-input');
 const successMessage = document.querySelector('.success-message');
 const errorMessage = document.querySelector('.error-message');
+const modalSavat = document.querySelector('modal-savat') // This seems unused, consider removing if not needed
+
+
+let cart = {}; // ! Bo'sh obyekt
+
+// Savatga mahsulot qo'shish
+document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
+    btn.addEventListener('click', function () {
+        const card = btn.closest('.product-card');
+        const id = card.getAttribute('data-id');
+        const name = card.querySelector('.product-name').textContent;
+        const priceText = card.querySelector('.price').textContent;
+        const price = parseFloat(priceText.replace(/[^\d]/g, '')); // Extract only numbers for calculation
+        const image = card.querySelector('img').src;
+
+        if (cart[id]) {
+            cart[id].quantity += 1;
+        } else {
+            cart[id] = {
+                id,
+                name,
+                price,
+                image,
+                quantity: 1
+            };
+        }
+
+        console.log(' Cart:', cart);
+        renderCartItems(); // Har qo‘shilganda modalni yangilaydi
+    });
+});
+
+// Modalni ochish
+const cartOpenBtn = document.getElementById('cart-open-btn');
+const cartModal = document.getElementById('cart-modal');
+const cartCloseBtn = document.getElementById('cart-close-btn');
+const cartList = document.getElementById('cart-list');
+const cartTotalPriceElement = document.getElementById('cart-total-price');
+
+cartOpenBtn.addEventListener('click', function () {
+    renderCartItems();
+    cartModal.classList.add('show');
+});
+
+cartCloseBtn.addEventListener('click', function () {
+    cartModal.classList.remove('show');
+});
+
+window.addEventListener('click', function (e) {
+    if (e.target === cartModal) {
+        cartModal.classList.remove('show');
+    }
+});
+
+// ?  Modalga objectdan ma’lumot chiqarish 
+function renderCartItems() {
+    cartList.innerHTML = '';
+    let totalPrice = 0;
+
+    if (Object.keys(cart).length === 0) {
+        cartList.innerHTML = "<p>Savat bo‘sh</p>";
+        cartTotalPriceElement.textContent = '0 so\'m';
+        return;
+    }
+
+    for (let id in cart) {
+        const item = cart[id];
+        const itemTotal = item.price * item.quantity;
+        totalPrice += itemTotal;
+
+        const div = document.createElement('div');
+        div.classList.add('cart-item');
+        div.innerHTML = `
+            <div class="cart-item-content">
+                <img src="${item.image}" alt="${item.name}">
+                <div>
+                    <p class="product-name"><strong>${item.name}</strong></p>
+                    <p class="price">${item.price.toLocaleString('uz-UZ')} so'm</p>
+                    <div class="quantity-controls">
+                        <button class="minus-btn" data-id="${item.id}">-</button>
+                        <span>${item.quantity}</span>
+                        <button class="plus-btn" data-id="${item.id}">+</button>
+                    </div>
+                </div>
+            </div>
+            <div class="cart-item-total">
+                ${itemTotal.toLocaleString('uz-UZ')} so'm
+            </div>
+        `;
+        cartList.appendChild(div);
+    }
+
+    cartTotalPriceElement.textContent = `${totalPrice.toLocaleString('uz-UZ')} so'm`;
+
+    // ? Plus va minus tugmalar
+    document.querySelectorAll('#cart-list .plus-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const id = this.getAttribute('data-id');
+            cart[id].quantity += 1;
+            renderCartItems(); 
+        });
+    });
+
+    document.querySelectorAll('#cart-list .minus-btn').forEach(btn => {
+        btn.addEventListener('click', function () {
+            const id = this.getAttribute('data-id');
+            cart[id].quantity -= 1;
+            if (cart[id].quantity <= 0) { 
+                delete cart[id]; 
+            }
+            renderCartItems();
+        });
+    });
+}
+
+
+
 
 // Favorites list
 let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
@@ -29,7 +146,6 @@ document.addEventListener('DOMContentLoaded', function () {
 });
 
 function setupEventListeners() {
-    // Catalog menu toggle
     if (catalogBtn && catalogMenu) {
         catalogBtn.addEventListener('click', (e) => {
             e.stopPropagation();
@@ -64,7 +180,7 @@ function setupEventListeners() {
         });
     }
 
-    // Product like buttons
+    // ? Mahsulotlar tugmasi  kabi
     document.querySelectorAll('.heart-icon').forEach(heart => {
         heart.addEventListener('click', function (e) {
             e.stopPropagation();
@@ -72,7 +188,7 @@ function setupEventListeners() {
         });
     });
 
-    // Add to cart functionality
+    // ? Savatga qo`shish function yasi
     document.querySelectorAll('.add-to-cart-btn').forEach(btn => {
         btn.addEventListener('click', function () {
             const container = this.closest('.add-to-cart-container');
@@ -84,34 +200,43 @@ function setupEventListeners() {
         });
     });
 
-    // Quantity controls
-    document.querySelectorAll('.minus-btn').forEach(btn => {
+    //? Savat  kartalari miqdorini boshqarish (savat modali emas)
+    document.querySelectorAll('.product-card .minus-btn').forEach(btn => {
         btn.addEventListener('click', function () {
-            updateQuantity(this, -1);
+            updateProductCardQuantity(this, -1);
         });
     });
 
-    document.querySelectorAll('.plus-btn').forEach(btn => {
+    document.querySelectorAll('.product-card .plus-btn').forEach(btn => {
         btn.addEventListener('click', function () {
-            updateQuantity(this, 1);
+            updateProductCardQuantity(this, 1);
         });
     });
 
 
-    // Modal 10 controls (Show More)
+    // ? Modal 10 boshqaruvlari
+    const openModal10 = document.querySelector(".open-modal-10");
+    const modal10 = document.querySelector(".modal-10");
+    const closeModal10 = document.createElement('span'); 
+    closeModal10.classList.add('close-modal-10');
+    if (modal10) {
+        modal10.querySelector('.modal-content-10').prepend(closeModal10); 
+    }
+
+
     if (openModal10 && modal10 && closeModal10) {
         openModal10.addEventListener("click", () => {
-            modal10.classList.add('show'); 
+            modal10.classList.add('show');
             openModal10.style.display = "none";
         });
 
         closeModal10.addEventListener("click", () => {
             modal10.classList.remove('show');
-            openModal10.style.display = "block"; 
+            openModal10.style.display = "block";
         });
     }
 
-    // Auth modals
+    // ? Auth modallari
     if (openModalBtn && modal1) {
         openModalBtn.addEventListener('click', function (e) {
             e.stopPropagation();
@@ -121,11 +246,15 @@ function setupEventListeners() {
     }
 
     document.addEventListener('click', function (e) {
-        if (!modal1.contains(e.target) && !modal2.contains(e.target) && e.target !== openModalBtn) {
+        const isClickOutsideModals = !modal1.contains(e.target) && !modal2.contains(e.target);
+        const isNotOpenModalBtn = e.target !== openModalBtn;
+
+        if (isClickOutsideModals && isNotOpenModalBtn) {
             modal1.classList.remove('show');
             modal2.classList.remove('show');
         }
     });
+
 
     // Phone number input
     if (telInput) {
@@ -137,17 +266,25 @@ function setupEventListeners() {
         });
 
         telInput.addEventListener('keydown', function (e) {
-            if (this.selectionStart < 4 && e.key !== 'Backspace' && e.key !== 'Tab') {
-                e.preventDefault();
-            }
-
             if (!/[\d]|Backspace|Delete|ArrowLeft|ArrowRight|Tab/.test(e.key)) {
                 e.preventDefault();
+            }
+            if (e.key === 'Backspace' && this.selectionStart <= 4 && this.value.startsWith('+998')) {
+                e.preventDefault();
+            }
+        });
+
+        telInput.addEventListener('input', function() {
+            if (!this.value.startsWith('+998')) {
+                this.value = '+998' + this.value.replace(/[^0-9]/g, '');
+                if (this.value.length > 4) {
+                    this.setSelectionRange(this.value.length, this.value.length);
+                }
             }
         });
     }
 
-    // Get code button
+    // ? kirish (kodni olish tugmasi)
     if (getCodeBtn) {
         getCodeBtn.addEventListener('click', function () {
             const phoneNumber = telInput.value;
@@ -165,7 +302,7 @@ function setupEventListeners() {
         });
     }
 
-    // Resend code
+    // ? kodni qayta yuborish
     if (resendCodeBtn) {
         resendCodeBtn.addEventListener('click', function () {
             showSuccess('Kod qayta yuborildi!');
@@ -173,15 +310,15 @@ function setupEventListeners() {
         });
     }
 
-    // Code inputs
+    // ? Kirish kodlari
     codeInputs.forEach((input, index) => {
         input.addEventListener('input', function () {
-            this.value = this.value.replace(/\D/g, '');
+            this.value = this.value.replace(/\D/g, ''); 
             if (this.value.length === 1) {
                 if (index < codeInputs.length - 1) {
                     codeInputs[index + 1].focus();
                 } else {
-                    verifyCode();
+                    verifyCode(); 
                 }
             }
         });
@@ -193,8 +330,8 @@ function setupEventListeners() {
     });
 }
 
-// Helper functions
-function updateQuantity(btn, change) {
+// ? mahsulotlat kartasi miqdori uchun yordamchi funktsiyalar
+function updateProductCardQuantity(btn, change) {
     const quantityValue = btn.parentElement.querySelector('.quantity-value');
     let currentQuantity = parseInt(quantityValue.textContent);
     currentQuantity += change;
@@ -212,7 +349,7 @@ function updateQuantity(btn, change) {
 function performSearch() {
     const query = searchInput.value.trim();
     if (query) {
-        alert(`Qidiruv natijalari: "${query}"`);
+        console.log(`Qidiruv natijalari: "${query}"`);
     }
 }
 
@@ -295,10 +432,8 @@ function updateFavoritesModal() {
 
 function verifyCode() {
     const enteredCode = Array.from(codeInputs).map(input => input.value).join('');
-    // For demonstration, let's assume a hardcoded code '12345'
     if (enteredCode === '12345') {
-        showSuccess('Kod toʻgʻri kiritildi!');
-        // Here you would typically proceed with login
+        showSuccess('');
         setTimeout(() => {
             modal2.classList.remove('show');
             showSuccess('Muvaffaqiyatli kirish!');
@@ -330,7 +465,7 @@ function clearMessages() {
     if (errorMessage) errorMessage.classList.remove('show');
 }
 
-
+// ? rasm larni right vs left ga qimilatish
 const images = [
     "assets/uzum img 1.png",
     "assets/kanisaner.png",
@@ -358,22 +493,21 @@ function nextImage() {
     showImage(current);
 }
 
-// Initial image display
 document.addEventListener('DOMContentLoaded', () => {
     showImage(current);
 });
 
-
+// ? modal 10 ta mahsulot
 const openModal10 = document.querySelector(".open-modal-10");
 const modal10 = document.querySelector(".modal-10");
 const closeModal10 = document.querySelector(".close-modal-10");
 
 openModal10.addEventListener("click", () => {
     modal10.style.display = "block";
-    openModal10.style.display = "none"; // Tugmani yashirish
+    openModal10.style.display = "none"; 
 });
 
 closeModal10.addEventListener("click", () => {
     modal10.style.display = "none";
-    openModal10.style.display = "block"; // Tugmani qayta ko'rsatish
+    openModal10.style.display = "block"; 
 });

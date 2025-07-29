@@ -25,9 +25,6 @@
                         </button>
                     </div>
                     <ul class="font-size-18 display">
-
-
-
                         <li class="div-ol-li-1 display">
                             <i class='bx bx-user'></i>
                             <span class="open-modal-kirish">Kirish</span>
@@ -52,18 +49,12 @@
                                 </div>
                             </div>
                         </li>
-
-
-
-
-
                         <li class="div-ol-li-2 display" id="favorites-btn">
                             <i class='bx bx-heart'></i>
                             <span>Saralangan</span> <span id="favorite-count">(0)</span>
                         </li>
                         <li class="div-ol-li-3 display" id="cart-btn">
-                            <i class='bx bx-cart'></i>
-                            <span>Savat</span>
+                            <button id="cart-open-btn"><i class='bx bx-cart'></i>Savat</button>
                         </li>
                     </ul>
                     <div class="modal" id="favoritesModal">
@@ -96,16 +87,13 @@
     </div>
 
     <div class="max-width">
-
         <main>
             <div class="slider-container">
                 <button class="arrow left" onclick="prevImage()">&#8592;</button>
-                <img id="slider-image" src="uzum_frame1.png" alt="Uzum product">
+                <img id="slider-image" src="assets/uzum img 1.png" alt="Uzum product">
                 <button class="arrow right" onclick="nextImage()">&#8594;</button>
             </div>
         </main>
-
-
 
         <div class="btn-max-1">
             <button>Onalar va bolalar uchun</button>
@@ -114,9 +102,8 @@
             <button>Maktab bozori</button>
         </div>
 
-
-        <div class="product-container display"> <!-- ! birinchi qator -->
-            <div class="product-card"> <!-- ? birrinchi mahsulot -->
+        <div class="product-container display">
+            <div class="product-card" data-id="1">
                 <div class="product-image">
                     <img src="assets/img-uzum.png" alt="Mahsulot rasmi">
                     <div class="heart-icon" data-product-id="1">
@@ -135,22 +122,21 @@
                     </div>
                     <div class="add-to-cart-container">
                         <button class="add-to-cart-btn">Savatga</button>
-                        <div class="quantity-selector hidden x">
+                        <div class="quantity-selector hidden">
                             <button class="minus-btn">-</button>
                             <span class="quantity-value">1</span>
                             <button class="plus-btn">+</button>
                         </div>
                     </div>
                 </div>
-            </div> <!-- ? birrinchi mahsulot -->
+            </div>
 
-            <div class="product-card"> <!-- ? ikkinchi mahsulot -->
+            <div class="product-card" data-id="2">
                 <div class="product-image">
                     <img src="assets/Samsung_Galaxy A34.png" alt="Mahsulot rasmi">
                     <div class="heart-icon" data-product-id="2">
                         <i class='bx bx-heart'></i>
                     </div>
-
                 </div>
                 <div class="product-details">
                     <div class="price-info">
@@ -171,9 +157,9 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- ? ikkinchi mahsulot -->
+            </div>
 
-            <div class="product-card"> <!-- ? uchinchi mahsulot -->
+            <div class="product-card" data-id="3">
                 <div class="product-image">
                     <img src="assets/muzlatkich.png" alt="Mahsulot rasmi">
                     <div class="heart-icon" data-product-id="3">
@@ -199,13 +185,9 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- ? uchinchi mahsulot -->
+            </div>
 
-
-
-
-
-            <div class="product-card"> <!-- ? to'rtinchi mahsulot -->
+            <div class="product-card" data-id="4">
                 <div class="product-image">
                     <img src="assets/cofe.png" alt="Mahsulot rasmi">
                     <div class="heart-icon" data-product-id="4">
@@ -231,12 +213,9 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- ? to'rtinchi mahsulot -->
+            </div>
 
-
-
-
-            <div class="product-card"> <!-- ? beshinchi mahsulot -->
+            <div class="product-card" data-id="5">
                 <div class="product-image">
                     <img src="assets/sovun.png" alt="Mahsulot rasmi">
                     <div class="heart-icon" data-product-id="5">
@@ -262,14 +241,11 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- ? beshinchi mahsulot -->
-        </div> <!-- ! birinchi qator -->
+            </div>
+        </div>
 
-
-
-
-        <div class="product-container display"> <!-- ! ikkinchi qator -->
-            <div class="product-card"> <!-- ? oltinchi mahsulot -->
+        <div class="product-container display">
+            <div class="product-card" data-id="6">
                 <div class="product-image">
                     <img src="assets/rasm-removebg-preview.png" alt="Mahsulot rasmi">
                     <div class="heart-icon" data-product-id="6">
@@ -288,22 +264,21 @@
                     </div>
                     <div class="add-to-cart-container">
                         <button class="add-to-cart-btn">Savatga</button>
-                        <div class="quantity-selector hidden x">
+                        <div class="quantity-selector hidden">
                             <button class="minus-btn">-</button>
                             <span class="quantity-value">1</span>
                             <button class="plus-btn">+</button>
                         </div>
                     </div>
                 </div>
-            </div> <!-- ? oltinchi mahsulot -->
+            </div>
 
-            <div class="product-card"> <!-- ? yettinchi mahsulot -->
+            <div class="product-card" data-id="7">
                 <div class="product-image">
                     <img src="assets/Снимок_экрана_2025-07-28_223304-removebg-preview.png" alt="Mahsulot rasmi">
                     <div class="heart-icon" data-product-id="7">
                         <i class='bx bx-heart'></i>
                     </div>
-
                 </div>
                 <div class="product-details">
                     <div class="price-info">
@@ -324,9 +299,9 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- ? yettinchi mahsulot -->
+            </div>
 
-            <div class="product-card"> <!-- ? sakkizinchi mahsulot -->
+            <div class="product-card" data-id="8">
                 <div class="product-image">
                     <img src="assets/uzum_olivia_7-.png" alt="Mahsulot rasmi">
                     <div class="heart-icon" data-product-id="8">
@@ -352,13 +327,9 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- ? sakkizinchi mahsulot -->
+            </div>
 
-
-
-
-
-            <div class="product-card"> <!-- ? to`qizinchi mahsulot -->
+            <div class="product-card" data-id="9">
                 <div class="product-image">
                     <img src="assets/uzum_9.png" alt="Mahsulot rasmi">
                     <div class="heart-icon" data-product-id="9">
@@ -384,12 +355,9 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- ? to'qizinchi mahsulot -->
+            </div>
 
-
-
-
-            <div class="product-card"> <!-- ? o`ninchi mahsulot -->
+            <div class="product-card" data-id="10">
                 <div class="product-image">
                     <img src="assets/uzum_10.png" alt="Mahsulot rasmi">
                     <div class="heart-icon" data-product-id="10">
@@ -415,15 +383,15 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- ? o`ninchi mahsulot -->
-        </div> <!-- ! ikkinchi qator -->
+            </div>
+        </div>
 
         <!-- ^ yana 10 ta ko`rish -->
         <button class="open-modal-10">Yana ko'rsat 10</button>
         <div class="modal-10">
             <div class="modal-content-10">
-                <div class="product-container display"> <!-- ! uchinchi  qator -->
-                    <div class="product-card"> <!-- ? o`n bir mahsulot -->
+                <div class="product-container display">
+                    <div class="product-card" data-id="11">
                         <div class="product-image">
                             <img src="assets/uzum_modal_1.png" alt="Mahsulot rasmi">
                             <div class="heart-icon" data-product-id="11">
@@ -442,22 +410,21 @@
                             </div>
                             <div class="add-to-cart-container">
                                 <button class="add-to-cart-btn">Savatga</button>
-                                <div class="quantity-selector hidden x">
+                                <div class="quantity-selector hidden">
                                     <button class="minus-btn">-</button>
                                     <span class="quantity-value">1</span>
                                     <button class="plus-btn">+</button>
                                 </div>
                             </div>
                         </div>
-                    </div> <!-- ? o`n bir mahsulot -->
+                    </div>
 
-                    <div class="product-card"> <!-- ? o`n ikki mahsulot -->
+                    <div class="product-card" data-id="12">
                         <div class="product-image">
                             <img src="assets/modal 2.png" alt="Mahsulot rasmi">
                             <div class="heart-icon" data-product-id="12">
                                 <i class='bx bx-heart'></i>
                             </div>
-
                         </div>
                         <div class="product-details">
                             <div class="price-info">
@@ -479,9 +446,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div> <!-- ? o`n ikki mahsulot -->
+                    </div>
 
-                    <div class="product-card"> <!-- ? o`n uch mahsulot -->
+                    <div class="product-card" data-id="13">
                         <div class="product-image">
                             <img src="assets/muzlatkich.png" alt="Mahsulot rasmi">
                             <div class="heart-icon" data-product-id="13">
@@ -507,13 +474,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div> <!-- ? o`n uch mahsulot -->
+                    </div>
 
-
-
-
-
-                    <div class="product-card"> <!-- ? o`n to'rt  mahsulot -->
+                    <div class="product-card" data-id="15">
                         <div class="product-image">
                             <img src="assets/cofe.png" alt="Mahsulot rasmi">
                             <div class="heart-icon" data-product-id="14">
@@ -539,12 +502,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div> <!-- ? o`n to'rt mahsulot -->
+                    </div>
 
-
-
-
-                    <div class="product-card"> <!-- ? o`n beshish mahsulot -->
+                    <div class="product-card" data-id="16">
                         <div class="product-image">
                             <img src="assets/sovun.png" alt="Mahsulot rasmi">
                             <div class="heart-icon" data-product-id="15">
@@ -570,14 +530,11 @@
                                 </div>
                             </div>
                         </div>
-                    </div> <!-- ? o`n beshish mahsulot -->
-                </div> <!-- ! uchinchi qator -->
+                    </div>
+                </div>
 
-
-
-
-                <div class="product-container display"> <!-- ! To`rtinchi qator -->
-                    <div class="product-card"> <!-- ? o`n olti mahsulot -->
+                <div class="product-container display">
+                    <div class="product-card" data-id="16">
                         <div class="product-image">
                             <img src="assets/img-uzum.png" alt="Mahsulot rasmi">
                             <div class="heart-icon" data-product-id="16">
@@ -597,22 +554,21 @@
                             </div>
                             <div class="add-to-cart-container">
                                 <button class="add-to-cart-btn">Savatga</button>
-                                <div class="quantity-selector hidden x">
+                                <div class="quantity-selector hidden">
                                     <button class="minus-btn">-</button>
                                     <span class="quantity-value">1</span>
                                     <button class="plus-btn">+</button>
                                 </div>
                             </div>
                         </div>
-                    </div> <!-- ? o`n olti mahsulot -->
+                    </div>
 
-                    <div class="product-card"> <!-- ? o`n yetti mahsulot -->
+                    <div class="product-card" data-id="17">
                         <div class="product-image">
                             <img src="assets/Samsung_Galaxy A34.png" alt="Mahsulot rasmi">
                             <div class="heart-icon" data-product-id="17">
                                 <i class='bx bx-heart'></i>
                             </div>
-
                         </div>
                         <div class="product-details">
                             <div class="price-info">
@@ -633,9 +589,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div> <!-- ? o`n yetti mahsulot -->
+                    </div>
 
-                    <div class="product-card"> <!-- ? o`n sakkiz mahsulot -->
+                    <div class="product-card" data-id="18">
                         <div class="product-image">
                             <img src="assets/muzlatkich.png" alt="Mahsulot rasmi">
                             <div class="heart-icon" data-product-id="18">
@@ -661,13 +617,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div> <!-- ? o`n sakkiz mahsulot -->
+                    </div>
 
-
-
-
-
-                    <div class="product-card"> <!-- ? o`n to`qqiz mahsulot -->
+                    <div class="product-card" data-id="19">
                         <div class="product-image">
                             <img src="assets/cofe.png" alt="Mahsulot rasmi">
                             <div class="heart-icon" data-product-id="19">
@@ -693,12 +645,9 @@
                                 </div>
                             </div>
                         </div>
-                    </div> <!-- ? o`n to`qqiz mahsulot -->
+                    </div>
 
-
-
-
-                    <div class="product-card"> <!-- ?  yigirmachi mahsulot -->
+                    <div class="product-card" data-id="20">
                         <div class="product-image">
                             <img src="assets/sovun.png" alt="Mahsulot rasmi">
                             <div class="heart-icon" data-product-id="20">
@@ -724,23 +673,19 @@
                                 </div>
                             </div>
                         </div>
-                    </div> <!-- ? yigirmachi mahsulot -->
-                </div> <!-- ! To`rtinchi qator -->
+                    </div>
+                </div>
             </div>
         </div>
         <!-- ^ yana 10 ta ko`rish -->
         <br><br>
 
-
         <main>
             <img src="assets/kanisaner.png" alt="">
         </main>
 
-
-
-
-        <div class="product-container display"> <!-- ! Beshinchi qator -->
-            <div class="product-card"> <!-- ? yigirma birrinchi mahsulot -->
+        <div class="product-container display">
+            <div class="product-card" data-id="21">
                 <div class="product-image">
                     <img src="assets/img-uzum.png" alt="Mahsulot rasmi">
                     <div class="heart-icon" data-product-id="21">
@@ -760,22 +705,21 @@
                     </div>
                     <div class="add-to-cart-container">
                         <button class="add-to-cart-btn">Savatga</button>
-                        <div class="quantity-selector hidden x">
+                        <div class="quantity-selector hidden">
                             <button class="minus-btn">-</button>
                             <span class="quantity-value">1</span>
                             <button class="plus-btn">+</button>
                         </div>
                     </div>
                 </div>
-            </div> <!-- ? yigirma birrinchi mahsulot -->
+            </div>
 
-            <div class="product-card"> <!-- ? yigirma ikkinchi mahsulot -->
+            <div class="product-card" data-id="22">
                 <div class="product-image">
                     <img src="assets/Samsung_Galaxy A34.png" alt="Mahsulot rasmi">
                     <div class="heart-icon" data-product-id="22">
                         <i class='bx bx-heart'></i>
                     </div>
-
                 </div>
                 <div class="product-details">
                     <div class="price-info">
@@ -796,9 +740,9 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- ? yigirma ikkinchi mahsulot -->
+            </div>
 
-            <div class="product-card"> <!-- ? yigirma uchinchi mahsulot -->
+            <div class="product-card" data-id="23">
                 <div class="product-image">
                     <img src="assets/muzlatkich.png" alt="Mahsulot rasmi">
                     <div class="heart-icon" data-product-id="23">
@@ -824,13 +768,9 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- ? yigirma uchinchi mahsulot -->
+            </div>
 
-
-
-
-
-            <div class="product-card"> <!-- ? yigirma  to'rtinchi mahsulot -->
+            <div class="product-card" data-id="24">
                 <div class="product-image">
                     <img src="assets/cofe.png" alt="Mahsulot rasmi">
                     <div class="heart-icon" data-product-id="24">
@@ -856,12 +796,9 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- ? yigirma to'rtinchi mahsulot -->
+            </div>
 
-
-
-
-            <div class="product-card"> <!-- ? yigirma beshinchi mahsulot -->
+            <div class="product-card" data-id="25">
                 <div class="product-image">
                     <img src="assets/sovun.png" alt="Mahsulot rasmi">
                     <div class="heart-icon" data-product-id="25">
@@ -887,14 +824,11 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- ? yigirma beshinchi mahsulot -->
-        </div> <!-- ! Beshinchi qator -->
+            </div>
+        </div>
 
-
-
-
-        <div class="product-container display"> <!-- ! oltinchi qator -->
-            <div class="product-card"> <!-- ? yigirma oltinchi mahsulot -->
+        <div class="product-container display">
+            <div class="product-card" data-id="26">
                 <div class="product-image">
                     <img src="assets/img-uzum.png" alt="Mahsulot rasmi">
                     <div class="heart-icon" data-product-id="26">
@@ -914,22 +848,21 @@
                     </div>
                     <div class="add-to-cart-container">
                         <button class="add-to-cart-btn">Savatga</button>
-                        <div class="quantity-selector hidden x">
+                        <div class="quantity-selector hidden">
                             <button class="minus-btn">-</button>
                             <span class="quantity-value">1</span>
                             <button class="plus-btn">+</button>
                         </div>
                     </div>
                 </div>
-            </div> <!-- ? yigirma oltinchi mahsulot -->
+            </div>
 
-            <div class="product-card"> <!-- ? yigirma yettinchi mahsulot -->
+            <div class="product-card" data-id="27">
                 <div class="product-image">
                     <img src="assets/Samsung_Galaxy A34.png" alt="Mahsulot rasmi">
                     <div class="heart-icon" data-product-id="27">
                         <i class='bx bx-heart'></i>
                     </div>
-
                 </div>
                 <div class="product-details">
                     <div class="price-info">
@@ -950,9 +883,9 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- ? yigirma yettinchi mahsulot -->
+            </div>
 
-            <div class="product-card"> <!-- ? yigirma sakkizinchi mahsulot -->
+            <div class="product-card" data-id="28">
                 <div class="product-image">
                     <img src="assets/muzlatkich.png" alt="Mahsulot rasmi">
                     <div class="heart-icon" data-product-id="28">
@@ -978,13 +911,9 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- ? yigirma sakkizinchi mahsulot -->
+            </div>
 
-
-
-
-
-            <div class="product-card"> <!-- ? yigirma to`qizinchi mahsulot -->
+            <div class="product-card" data-id="29">
                 <div class="product-image">
                     <img src="assets/cofe.png" alt="Mahsulot rasmi">
                     <div class="heart-icon" data-product-id="29">
@@ -1010,12 +939,9 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- ? yigirma to'qizinchi mahsulot -->
+            </div>
 
-
-
-
-            <div class="product-card"> <!-- ? o`tizinchi mahsulot -->
+            <div class="product-card" data-id="30">
                 <div class="product-image">
                     <img src="assets/sovun.png" alt="Mahsulot rasmi">
                     <div class="heart-icon" data-product-id="30">
@@ -1041,13 +967,8 @@
                         </div>
                     </div>
                 </div>
-            </div> <!-- ? o`tizinchi mahsulot -->
-        </div> <!-- ! oltinchi qator -->
-
-
-
-
-
+            </div>
+        </div>
 
         <footer class="display">
             <div class="footer-1">
@@ -1073,7 +994,7 @@
                     <p class="font-size-18">AppStore</p>
                 </div>
                 <div class="div-goolge">
-                    <i class='font-size-30 bx bxl-play-store'></i> <!-- Corrected class name for Google Play icon -->
+                    <i class='font-size-30 bx bxl-play-store'></i>
                     <p class="font-size-18">Google Play</p>
                 </div>
                 <br>
@@ -1086,18 +1007,28 @@
                             class='font-size-35 bx bxl-telegram'></i></a>
                     <a href="https://www.facebook.com/login/"><i class='font-size-35 bx bxl-facebook'></i></a>
                     <a href="https://www.youtube.com/"><i class='font-size-35 bx bxl-youtube'></i></a>
-
                 </div>
             </div>
         </footer>
-
-
-
-
-
     </div>
 
-    
+    <!-- Cart Modal -->
+    <div id="cart-modal" class="modal">
+        <div class="modal-content cart-modal-content">
+            <span id="cart-close-btn" class="close-btn">&times;</span>
+            <div class="cart-modal-header">
+                <h1>Savatdagi mahsulotlar</h1>
+            </div>
+            <div id="cart-list">
+                <p>Savat bo‘sh</p>
+            </div>
+            <div class="cart-modal-footer">
+                <p>Jami: <span id="cart-total-price">0 so'm</span></p>
+                <button class="checkout-btn">Buyurtma berish</button>
+            </div>
+        </div>
+    </div>
+
     <script src="script.js"></script>
 </body>
 
