@@ -445,6 +445,12 @@ main img {
     cursor: pointer;
     font-size: 16px;
     transition: background-color 0.3s ease;
+
+
+    a{
+        text-decoration: none;
+        color: white;
+    }
 }
 
 .checkout-btn:hover {
